@@ -6,10 +6,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://sugar.wtf/wizardry.min.css">
-		<link rel="stylesheet" href="https://sugar.wtf/entypo/entypo.css">
+		<link rel="stylesheet" href="/css/wizardry.min.css">
+		<link rel="stylesheet" href="/css/entypo.css">
 
-		<link rel="icon" type="image/png" href="https://sugarchain.org/logo.png">
+		<link rel="icon" type="image/png" href="/images/logo.png">
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -103,15 +103,13 @@
 			}
 		</style>
 		<title>Wallet</title>
-		<meta name="description" content="Sugarchain Web Wallet">
+		<meta name="description" content="Bitweb Web Wallet">
 	</head>
 	<body>
 		<!-- Navbar -->
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 			<div class="container">
 				<a href="#" class="navbar-brand">
-					<svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2334.36 2334.36"><defs><style>.cls-1{fill:#fff;}</style></defs><title>sug white</title><path class="cls-1" d="M1049.8,669.06l-545,519.05-.14,2,470.65,32.47,589-603.9Zm566.57-103.61,432,748.49-543.06,672L936.07,1837.25,443.65,1185.86l593.23-565,39.08-3.83,540.27-53Z" transform="translate(-83.54 -82.07)"/><path class="cls-1" d="M1250.72,82.07c644.61,0,1167.18,522.56,1167.18,1167.18S1895.33,2416.43,1250.72,2416.43,83.54,1893.86,83.54,1249.25,606.1,82.07,1250.72,82.07ZM2301.18,1366c64.46-580.16-353.59-1102.72-933.74-1167.18S264.72,552.36,200.26,1132.52,553.85,2235.25,1134,2299.7,2236.72,1946.11,2301.18,1366Z" transform="translate(-83.54 -82.07)"/></svg>
-					<b tkey="wallet-title"></b>
 				</a>
 				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -203,7 +201,7 @@
 									<a class="nav-link tab-link" data-tab-name="wallet-send" data-tab-family="wallet-block" href="#" tkey="send"></a>
 								</li>
 								<li class="nav-item mr-2">
-									<a id="history-link" class="nav-link" target="_blank" href="https://sugar.wtf/#/address/" tkey="history"></a>
+									<a id="history-link" class="nav-link" target="_blank" href="https://webwallet,bitcore.org/#/address/" tkey="history"></a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link tab-link" data-tab-name="wallet-keys" data-tab-family="wallet-block" href="#" tkey="keys"></a>
@@ -458,7 +456,7 @@
 		<!-- Footer :3 -->
 		<footer class="mb-3">
 			<div class="container text-center">
-				Made with <span class="entypo heart text-danger"></span> by <a target="_blank" href="https://github.com/sugarchain-project/web-wallet">Volbil</a>
+				Made with <span class="entypo heart text-danger"></span> by <a target="_blank" href="https://github.com/bitweb-project/web-wallet">Volbil</a>
 			</div>
 		</footer>
 
@@ -469,36 +467,36 @@
 			var walletTimer = false
 			var walletVersion = '0.5'
 			var networkConfigs = {
-				'SUGAR': {
-					'uri': 'sugarchain:',
-					'title': 'Sugar Wallet',
-					'name': 'Main Network (SUGAR)',
-					'api': 'https://api.sugarchain.org',
-					'ticker': 'SUGAR',
+				'BTE': {
+					'uri': 'bitweb:',
+					'title': 'Bitweb Wallet',
+					'name': 'Main Network (BTE)',
+					'api': 'https://api.bitwebcore.org',
+					'ticker': 'BTE',
 					'decimals': 8,
-					'fee': 0.00001,
+					'fee': 0.0001,
 					'network': {
-						'messagePrefix': '\x19Sugarchain Signed Message:\n',
+						'messagePrefix': '\x19Bitweb Signed Message:\n',
 						'bip32': {
 							'public': 0x0488b21e,
 							'private': 0x0488ade4
 						},
-						'bech32': 'sugar',
-						'pubKeyHash': 0x3F,
-						'scriptHash': 0x7D,
+						'bech32': 'web',
+						'pubKeyHash': 0x21,
+						'scriptHash': 0x1E,
 						'wif': 0x80
 					}
 				},
 				'TUGAR': {
-					'uri': 'sugarchain:',
-					'title': 'Sugar Wallet',
-					'name': 'Test Network (TUGAR)',
-					'api': 'https://api-testnet.sugarchain.org',
+					'uri': 'bitweb:',
+					'title': 'Bitweb Wallet',
+					'name': 'Test Network (TBTE)',
+					'api': 'https://api-testnet.bitweb.org',
 					'ticker': 'TUGAR',
 					'decimals': 8,
-					'fee': 0.00001,
+					'fee': 0.0001,
 					'network': {
-						'messagePrefix': '\x19Sugarchain Signed Message:\n',
+						'messagePrefix': '\x19Bitweb Signed Message:\n',
 						'bip32': {
 							'public': 0x0488b21e,
 							'private': 0x0488ade4
@@ -514,10 +512,10 @@
 			// Explorer links
 			var blockExplorer = {
 				'address': function(address) {
-					return 'https://sugar.wtf/#/address/' + address + '/' + getConfig()['ticker']
+					return 'https://explorer.bitwebcore.org/address/' + address + '/'
 				},
 				'tx': function(tx) {
-					return 'https://sugar.wtf/#/transaction/' + tx + '/' + getConfig()['ticker']
+					return 'https://explorer.bitwebcore.org/tx/' + tx + '/'
 				}
 			}
 
